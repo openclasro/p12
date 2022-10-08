@@ -1,0 +1,38 @@
+.daily-activity {
+    background: #fbfbfb;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 320px;
+    padding: 2em;
+}
+.daily-activity__heading {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+.daily-activity__heading__listctn {
+    align-items: center;
+    display: flex;
+    gap: 3em;
+}
+.daily-activity__heading__listctn li {
+    align-items: center;
+    display: flex;
+}
+.daily-activity__heading__listctn li::before {
+    content: "";
+    background-color: #020203;
+    border-radius: 2em;
+    height: 10px;
+    margin-right: 1em;
+    width: 10px;
+}
+.daily-activity__heading__listctn .calories::before {
+    background-color: #e60000;
+}
+.daily-activity .recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child {
+    stroke-opacity: 0;
+}

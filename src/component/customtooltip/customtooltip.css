@@ -1,0 +1,23 @@
+.tooltip {
+    color: white;
+    font-size: 10px;
+   
+}
+.tooltip--primary {
+    background-color: #e60000;
+}
+.tooltip--light {
+    background-color: #fff;
+    color: #000;
+}
+.tooltip__listctn {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.tooltip__listctn li {
+    padding: 1.5em 1em;
+    
+}

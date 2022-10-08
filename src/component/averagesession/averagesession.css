@@ -1,0 +1,22 @@
+.average-session {
+    background-color: #ff0101;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.average-session__title {
+    color: rgba(255, 255, 255, 0.5);
+    padding: 2em 2em 0 2em;
+    position: absolute;
+}
+.average-session__personnalizedAxis {
+    display: flex;
+    flex: 1;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 1em 1em 1.5em 1em;
+}
+.average-session__personnalizedAxis li {
+    color: rgba(255, 255, 255, 0.5);
+}

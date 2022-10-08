@@ -1,0 +1,9 @@
+.loading {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #c27272;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+  }
+  

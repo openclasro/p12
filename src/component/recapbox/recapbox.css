@@ -1,0 +1,36 @@
+.recapbox {
+    align-items: center;
+    background: #fbfbfb;
+    border-radius: 0.3em;
+    display: flex;
+    padding: 2em;
+    flex: 1;
+}
+.recapbox__iconctn {
+    align-items: center;
+    border-radius: 0.3em;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    margin-right: 2em;
+    width: 60px;
+}
+.recapbox__iconctn--calories {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+.recapbox__iconctn--proteines {
+    background-color: rgba(74, 184, 255, 0.1);
+}
+.recapbox__iconctn--glucide {
+    background-color: rgba(249, 206, 35, 0.1);
+}
+.recapbox__iconctn--lipide {
+    background-color: rgba(253, 81, 129, 0.1);
+}
+.recapbox__text h3 {
+    font-size: 20px;
+}
+.recapbox__text p {
+    font-size: 14px;
+    text-transform: capitalize;
+}
