@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer
 } from "recharts";
 import Customtooltip from "../customtooltip/Customtooltip";
@@ -33,15 +32,11 @@ export default function Dailyactivity({data}) {
     const somme = min + max
     const medium = somme / 2
     const yAxisData = [min, medium, max]
-    // console.log(kilogramValues)
-    // console.log(min)
-    // console.log(max)
-    // console.log(yAxisData);
-    // console.log( "hyyyy", Math.min(...kilogramValues))
+    
     return yAxisData
 
   }
-  // console.log(getYaxisData)
+ 
 
 
   return (

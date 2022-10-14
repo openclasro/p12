@@ -15,20 +15,20 @@ import RadarPerformance from "../../component/radarperformance/RadarPerformance"
 import Score from "../../component/scpre/Score";
 import Loading from "../../component/loading/Loading";
 import ErrorHandler from "../../component/errorhandler/ErrorHandler";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 const Profil = () => {
 
     let { id } = useParams();
   
-       const [user,activity,averageSessions,performance,IsLoading,error] = useFetchUserData(id);
+     const [user,activity,averageSessions,performance,IsLoading,error] = useFetchUserData(id);
       const [userMock,activityMock,averageSessionsMock,performanceMock,IsLoadingMock,errorMock] = useFetchUserMockData(id);
       console.log(process.env.REACT_APP_MOCK_DATA );
       const dataFormatter = useDataFormatter(process.env.REACT_APP_MOCK_DATA==="true" ? [userMock,activityMock,averageSessionsMock,performanceMock,IsLoadingMock,errorMock] :[user,activity,averageSessions,performance,IsLoading,error]);
-    
-  useEffect(() => {
-   console.log(process.env.REACT_APP_MOCK_DATA) ;
+        console.log('dataformatter', dataFormatter)
+//   useEffect(() => {
+//    console.log(process.env.REACT_APP_MOCK_DATA) ;
    
-  },[])
+//   },[])
   
          
      
@@ -42,7 +42,7 @@ const Profil = () => {
                 </div>
                 <div className="profil__content">
                     <div className="profil__content__activity">
-                        {/* <DailyActivity activity={activityData} /> */}
+                        
                         <Dailyactivity data ={dataFormatter?.getUserActivity()}/>
                         <div className="profil__content__activity__details">
                             <AverageSession data={dataFormatter?.getUserAvgSession()} />

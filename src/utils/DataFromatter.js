@@ -1,7 +1,7 @@
 const { useState, useEffect } = require("react");
 
 function useDataFormatter(data) {
-   // console.log(data)
+
     const [formatter, setformatter] = useState(null);
      class DataFormatter{
         constructor(data) {
@@ -34,21 +34,17 @@ function useDataFormatter(data) {
 
 
          getUserActivity(){
-            // console.log(this.data.activity.sessions.map((session,index)=>({...session,index:index+1})))
+            
             return this.data.activity.sessions.map((session,index)=>({...session,index:index+1}));
         }
 
         getUserAvgSession(){
-         // console.log(this.data.avgSessions.sessions.map(session=> ({...session,day:["L","M","M","J","V","S","d"][session.day -1]})) )
+        
          return this.data.avgSessions.sessions.map(session=> ({...session,day:["L","M","M","J","V","S","d"][session.day -1]})) 
       }
       
       trad = (kind) => {
-         // if (kind === "energye") return 'energie'
-         // else if (kind === "speed") return 'vitesse'
-         // ..
-         // ..
-         // else {return kind} 
+       
          switch (kind) {
             case "energy":
                return "energie"

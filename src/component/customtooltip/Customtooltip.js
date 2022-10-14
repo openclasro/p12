@@ -12,6 +12,8 @@ import './customtooltip.css';
  * @returns {JSX.Element}  A CustomTooltip component
  */
 const Customtooltip = ({ active, payload }) => {
+
+    
     if (active) {
         return (
             <div className={payload[0].fill === "#fff" ? "tooltip tooltip--light" : "tooltip tooltip--primary"}>
