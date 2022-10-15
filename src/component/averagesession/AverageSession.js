@@ -2,15 +2,12 @@ import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
 import Customtooltip from '../customtooltip/Customtooltip';
 import './averagesession.css';
-// import CustomCursor from './CustomCursor';
+
 
 /**
  * Component that display a line chart 
  * of user session length per day
- * @param {Object} props session props
- * @param {Object[]} props.session array of object that contain the day and session length
- * @param {string} props.session.day user session day
- * @param {number} props.session.sessionLength user session length
+ * @param {Object[]} props.data array of object that contain the day  and session length
  * @returns {JSX.Element}  An AverageSession component
  */
 const AverageSession = ({ data }) => {
@@ -28,7 +25,7 @@ const AverageSession = ({ data }) => {
                             <stop offset="100%" stopColor="white" stopOpacity={1} />
                         </linearGradient>
                     </defs>
-                    <YAxis hide={true} domain={['dataMin ', 'dataMax + 5']} />
+                    <YAxis hide={true} domain={['dataMin ', 'dataMax ']} />
                     <XAxis
                         hide={false}
                         dataKey="day"
@@ -62,7 +59,7 @@ const AverageSession = ({ data }) => {
 }
 
 AverageSession.propTypes = {
-    session: PropTypes.arrayOf(
+    data: PropTypes.arrayOf(
         PropTypes.shape({
             day: PropTypes.string,
             sessionLength: PropTypes.number

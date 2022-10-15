@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+/**
+ * @typedef {Object} UserData
+ * @property {Object} userProfil user activity profil data
+ * @property {Object} activity user activity
+ * @property {Object} averageSessions user average sessions
+ * @property {Object} performance user performance
+ * @property {boolean} IsLoading if true,  the data is still loading. if false the data is loaded
+ * @property {null|string} error if there is an error or not
+ */
+
+/**
+ * Custom hook that get all user data from the server
+ * @param {Number} userId id of current user
+ * @returns {UserData} data of user
+ */
 
 function useFetchUserData(userId) {
   const [userProfil, setUser] = useState(null);

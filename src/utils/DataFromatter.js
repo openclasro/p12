@@ -1,19 +1,34 @@
 const { useState, useEffect } = require("react");
 
+
+/**
+ * @typedef {Object} DataFormatter
+ * @property {DataFormatter} formatter an istance of the class DataFormatter
+ */
+
+/**
+ * Custom hook that get all data and create a signal isntance of the class DataFormatter to formate the data for each specific component
+ * @param {Object[]} data id of current user
+ * @returns {DataFormatter} DataFormatter object
+ */
+
 function useDataFormatter(data) {
+   
 
     const [formatter, setformatter] = useState(null);
      class DataFormatter{
         constructor(data) {
          this.data = {profil:data[0],activity:data[1],avgSessions:data[2],performance:data[3]};
+        
         }
          getUserProfil(){
            
+        console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",this.data.profil.userInfos.firstName,this.data.profil.userInfos.lastName,this.data.profil.userInfos.age)
             return {firstName:this.data.profil.userInfos.firstName,lastName:this.data.profil.userInfos.lastName,age:this.data.profil.userInfos.age};
-            
-        }
+         }
     
         getCalorieCount(){
+         console.log("bbbbbbbbbbbbbbbbbbbbbbbb",this.data.profil.keyData.calorieCount)
          return this.data.profil.keyData.calorieCount;
       
         }
@@ -34,7 +49,7 @@ function useDataFormatter(data) {
 
 
          getUserActivity(){
-            
+            console.log("66666666666666666666666666",this.data.activity.sessions.map((session,index)=>({...session,index:index+1})))
             return this.data.activity.sessions.map((session,index)=>({...session,index:index+1}));
         }
 

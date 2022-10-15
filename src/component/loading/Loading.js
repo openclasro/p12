@@ -7,6 +7,9 @@ const override: CSSProperties = {
  
 };
 
+/**
+ * Component that display a loader when the data is not ready to display
+ */
 function Loading() {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");

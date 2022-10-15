@@ -17,7 +17,7 @@ function App() {
     <Routes >
           <Route path="/" element={<Navigate to="/profil/12" />}/>
           <Route path="/profil/:id" element={<Profil />} />
-          {/* <Route path="/error" element={<Profil />} /> */}
+         
     </Routes >
     </main>
 

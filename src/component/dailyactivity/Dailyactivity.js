@@ -1,5 +1,6 @@
 // import "./styles.css";
 import React from "react";
+import PropTypes from 'prop-types';
 import {
   BarChart,
   Bar,
@@ -13,7 +14,14 @@ import Customtooltip from "../customtooltip/Customtooltip";
 
 import './chart.css';
 
-export default function Dailyactivity({data}) {
+
+/**
+ * Component that display a bar chart 
+ * of user daily activity for seven days
+ * @param {Object[]} props.data array of object that contain the day, kilogram, calories
+ * @returns {JSX.Element}  An Dailyactivity component
+ */
+const  Dailyactivity = ({data}) => {
 
   const getYaxisData = () => {
     const getkKilogramValue = () => {
@@ -65,12 +73,12 @@ export default function Dailyactivity({data}) {
       <CartesianGrid strokeDasharray="3 3"   vertical={false} />
       <XAxis dataKey="index"   
                        
-                       domain={['dataMin' , 'dataMax']}
-                        tickLine={false}
-                        stroke="#DEDEDE"
-                        tick={{ fill: "#9B9EAC", fontFamily: "Roboto", fontWeight: 500, fontSize: 14 }}
-                        height={40}
-                        tickSize={25}
+        stroke="#DEDEDE"
+        tickLine={false}
+        tick={{ fill: "#9B9EAC", fontFamily: "Roboto", fontWeight: 500, fontSize: 14 }}
+        height={40}
+        tickSize={25}
+        domain={['dataMin' , 'dataMax']}
                        />
                     <YAxis
                     
@@ -80,14 +88,14 @@ export default function Dailyactivity({data}) {
                         orientation="right"
                         tickLine={false}
                         axisLine={false}
-                         ticks={getYaxisData()}
+                        ticks={getYaxisData()}
                         tick={{ fill: "#9B9EAC", fontFamily: "Roboto", fontWeight: 500, fontSize: 14 }}
                         width={70}
                         tickSize={50}
                         
                     />
                     <YAxis
-                          hide
+                        hide
                         yAxisId="calories"
                         domain={['dataMin - 100', 'dataMax + 100']}
                         dataKey="calories"
@@ -96,13 +104,20 @@ export default function Dailyactivity({data}) {
       <Tooltip  wrapperStyle={{outline :"none"}} content={<Customtooltip/>} cursor={{ fill: '#E5E5E5' }} offset={40}/>
 
       <Bar dataKey="kilogram" yAxisId="kilogram" fill="#282D30"   radius={[4, 4, 0, 0]}  unit="kg" orientation={"right"}  />
-      <Bar yAxisId="calories"
-                        dataKey="calories"
-                        radius={[4, 4, 0, 0]}
-                        fill="#E60000"
-                        unit="kCal" />
-    </BarChart>
+      <Bar yAxisId="calories" dataKey="calories" radius={[4, 4, 0, 0]} fill="#E60000"unit="kCal" />
+    </BarChart> 
     </ResponsiveContainer>
     </div>
   );
 }
+Dailyactivity.propTypes = {
+  data: PropTypes.arrayOf(
+      PropTypes.shape({
+          day: PropTypes.number,
+          calories: PropTypes.number,
+          kilogram: PropTypes.number,
+      })
+  ),
+}
+
+export default Dailyactivity;

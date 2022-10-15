@@ -15,7 +15,14 @@ import RadarPerformance from "../../component/radarperformance/RadarPerformance"
 import Score from "../../component/scpre/Score";
 import Loading from "../../component/loading/Loading";
 import ErrorHandler from "../../component/errorhandler/ErrorHandler";
-// import { useEffect, useState } from "react";
+
+/**
+ * Main page component that displays all 
+ * the user activities data in a Dashboard
+ *
+ * @returns {JSX.Element} A Profil component
+ */
+
 const Profil = () => {
 
     let { id } = useParams();
@@ -25,16 +32,10 @@ const Profil = () => {
       console.log(process.env.REACT_APP_MOCK_DATA );
       const dataFormatter = useDataFormatter(process.env.REACT_APP_MOCK_DATA==="true" ? [userMock,activityMock,averageSessionsMock,performanceMock,IsLoadingMock,errorMock] :[user,activity,averageSessions,performance,IsLoading,error]);
         console.log('dataformatter', dataFormatter)
-//   useEffect(() => {
-//    console.log(process.env.REACT_APP_MOCK_DATA) ;
-   
-//   },[])
-  
-         
      
         return (
 
-            (error ?   <ErrorHandler message={error}/>  : (IsLoading && process.env.REACT_APP_MOCK_DATA==="false" ?  <Loading/> :   
+            (error ?   <ErrorHandler message={error.message}/>  : (IsLoading && process.env.REACT_APP_MOCK_DATA==="false" ?  <Loading/> :   
             <section className="profil">
                 <div className="profil__heading">
                     <h2 className="profil__heading__salutation">Bonjour <span>{dataFormatter?.getUserProfil()?.firstName}</span></h2>

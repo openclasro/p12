@@ -5,9 +5,9 @@ import './radarperformance.css';
  * Component that display a radar
  * chart with each kind of user performance
  * @param {Object} props performancies props
- * @param {Object[]} props.performance array of object that contain performance types and their values
- * @param {number} props.performance.value user performance
- * @param {string} props.performance.kind kind of performance
+ * @param {Object[]} props.data array of object that contain performance types and their values
+ * @param {number} props.data.value user performance
+ * @param {string} props.data.kind kind of performance
  * @returns {JSX.Element}  A RadarPerformance component
  */
 const RadarPerformance = ({ data }) => {
@@ -33,7 +33,7 @@ const RadarPerformance = ({ data }) => {
 }
 
 RadarPerformance.propTypes = {
-  performance: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.number,
       kind: PropTypes.string
